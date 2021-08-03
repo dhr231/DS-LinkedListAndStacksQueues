@@ -1,4 +1,5 @@
-import com.assignment.linkedlist;
+import com.magic.datastructures.MyLinkedList;
+import com.magic.datastructures.MyNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -15,5 +16,19 @@ public class MyNodeTest {
         boolean result = firstNode.getNext().equals(secondNode) && secondNode.getNext().equals(thirdNode);
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void givenThreeNumbers_ShouldAddInLinkedList()
+    {
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.add(15);
+        myLinkedList.add(16);
+        myLinkedList.add(17);
+        myLinkedList.printLinkedList();
+        boolean result = myLinkedList.head.data == 17 && myLinkedList.head.getNext().data == 16 && myLinkedList.head.getNext().getNext().data == 15;
+        Assertions.assertTrue(result);
+    }
+
+
 
 }
